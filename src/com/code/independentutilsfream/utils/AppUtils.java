@@ -8,14 +8,11 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 
-/**
- * AppUtils
- * <ul>
- * <li>{@link AppUtils#isNamedProcess(Context, String)}</li>
- * </ul>
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-5-07
- */
+ /**
+  * 
+  * @author tom
+  *
+  */
 public class AppUtils {
 
     private AppUtils() {
