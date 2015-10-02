@@ -19,19 +19,7 @@ public class AppUtils {
         throw new AssertionError();
     }
 
-    /**
-     * whether this process is named with processName
-     * 
-     * @param context
-     * @param processName
-     * @return <ul>
-     *         return whether this process is named with processName
-     *         <li>if context is null, return false</li>
-     *         <li>if {@link ActivityManager#getRunningAppProcesses()} is null, return false</li>
-     *         <li>if one process of {@link ActivityManager#getRunningAppProcesses()} is equal to processName, return
-     *         true, otherwise return false</li>
-     *         </ul>
-     */
+  
     public static boolean isNamedProcess(Context context, String processName) {
         if (context == null) {
             return false;
