@@ -8,7 +8,6 @@ import android.net.Uri;
 /**
  * 手机组件调用工具类
  *
- * @author jingle1267@163.com
  */
 public final class PhoneUtil {
 

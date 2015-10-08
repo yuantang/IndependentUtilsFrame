@@ -26,7 +26,6 @@ import android.text.TextUtils;
 /**
  * 轮询服务工具类
  *
- * @author jingle1267@163.com
  */
 public final class PollingUtils {
 

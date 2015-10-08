@@ -59,7 +59,6 @@ import android.widget.TextView;
  * <li>{@link ViewUtils#setSearchViewOnClickListener(View, OnClickListener)}</li>
  * </ul>
  *
- * @author jingle1267@163.com
  */
 public final class ViewUtils {
 

@@ -11,7 +11,6 @@ import android.text.TextUtils;
 /**
  * IMSI工具类
  *
- * @author jingle1267@163.com
  */
 public class ImsiUtil {
 

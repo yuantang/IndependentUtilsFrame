@@ -1,21 +1,5 @@
-/**
- * Copyright 2014 Zhenguo Jin
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.code.independentutilsfream.utils;
-
-
+import android.annotation.SuppressLint;
 import android.text.TextUtils;
 
 import java.text.ParseException;
@@ -26,7 +10,6 @@ import java.util.Date;
 /**
  * 日期工具类
  *
- * @author jingle1267@163.com
  */
 public final class DateUtils {
 
@@ -42,12 +25,14 @@ public final class DateUtils {
     public static final String NEWS_ITEM_DATE_FORMAT = "hh:mm M月d日 yyyy";
 
 
-    public static String dateToString(Date date, String pattern)
+    @SuppressLint("SimpleDateFormat")
+	public static String dateToString(Date date, String pattern)
             throws Exception {
         return new SimpleDateFormat(pattern).format(date);
     }
 
-    public static Date stringToDate(String dateStr, String pattern)
+    @SuppressLint("SimpleDateFormat")
+	public static Date stringToDate(String dateStr, String pattern)
             throws Exception {
         return new SimpleDateFormat(pattern).parse(dateStr);
     }
@@ -59,7 +44,8 @@ public final class DateUtils {
      * @param type 需要的日期格式
      * @return 按照需求格式的日期字符串
      */
-    public static String formatDate(Date date, String type) {
+    @SuppressLint("SimpleDateFormat")
+	public static String formatDate(Date date, String type) {
         try {
             SimpleDateFormat df = new SimpleDateFormat(type);
             return df.format(date);
@@ -76,7 +62,8 @@ public final class DateUtils {
      * @param type    日期字符串格式
      * @return Date对象
      */
-    public static Date parseDate(String dateStr, String type) {
+    @SuppressLint("SimpleDateFormat")
+	public static Date parseDate(String dateStr, String type) {
         SimpleDateFormat df = new SimpleDateFormat(type);
         Date date = null;
         try {
@@ -131,7 +118,8 @@ public final class DateUtils {
      * @param time 时间
      * @return 当前日期转换为更容易理解的方式
      */
-    public static String translateDate(Long time) {
+    @SuppressLint("SimpleDateFormat")
+	public static String translateDate(Long time) {
         long oneDay = 24 * 60 * 60 * 1000;
         Calendar current = Calendar.getInstance();
         Calendar today = Calendar.getInstance();    //今天
@@ -167,7 +155,8 @@ public final class DateUtils {
      * @param time 时间
      * @return
      */
-    private String translateDate(long time, long curTime) {
+    @SuppressWarnings("unused")
+	private String translateDate(long time, long curTime) {
         long oneDay = 24 * 60 * 60;
         Calendar today = Calendar.getInstance();    //今天
         today.setTimeInMillis(curTime * 1000);
@@ -223,5 +212,89 @@ public final class DateUtils {
             }
         }
     }
+    /**
+	 * 判断该年是否是闰年<p>
+	 * 闰年的2月有29天，平年只有28天<p>
+	 * 公历闰年判定遵循的规律为：四年一闰，百年不闰，四百年再闰。
+	 * @param year 年
+	 * @return 是闰年返回true
+	 */
+	public static boolean isLeapYear(int year) {
+		return ((year % 400) == 0) ? true : ((year % 4 == 0) && (year % 100 != 0));
+	}
+	
+	/**
+	 * 返回指定年中的某一个月的最大天数
+	 * 有31天的月份为：1、3、5、7、8、10、12
+	 * 只有30天的月份：4、6、9、11
+	 * 闰年2月有29天
+	 * 平年2月有28天
+	 * @param year 年
+	 * @param month 月
+	 * @return
+	 */
+	public static int maxDayOfMonth(int year, int month) {
+		// 如果是2月
+		if (month == 2) {
+			return isLeapYear(year) ? 29 : 28;
+		}
+		
+		int maxDay;
+		switch (month) {
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			maxDay = 30;
+			break;
+		default:
+			maxDay = 31;
+			break;
+		}
+		return maxDay;
+	}
+
+	public class MyDate {
+		
+		public int year;
+		public int month;
+		
+		
+		public MyDate(int year, int month) {
+			this.year = year;
+			this.month = month;
+		}
+		
+		@Override
+		public String toString() {
+			return year + "-" + (month < 10 ? "0" : "") + month;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + month;
+			result = prime * result + year;
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			MyDate other = (MyDate) obj;
+			if (month != other.month)
+				return false;
+			if (year != other.year)
+				return false;
+			return true;
+		}
+
+	}
 
 }

@@ -9,7 +9,6 @@ import android.view.Surface;
 /**
  * 窗口工具箱
  *
- * @author zhenguo
  */
 public final class WindowUtils {
 

@@ -18,7 +18,6 @@ public class AppUtils {
     private AppUtils() {
         throw new AssertionError();
     }
-
   
     public static boolean isNamedProcess(Context context, String processName) {
         if (context == null) {
