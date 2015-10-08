@@ -14,14 +14,12 @@ import android.text.TextUtils;
  *
  */
 public final class RegUtils {
-
     /**
      * Don't let anyone instantiate this class.
      */
     private RegUtils() {
         throw new Error("Do not need instantiate!");
     }
-
     /**
      * 邮箱检测
      *

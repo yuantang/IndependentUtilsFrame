@@ -13,39 +13,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 import android.text.TextUtils;
 
 /**
  * File Utils
- * <ul>
- * Read or write file
- * <li>{@link #readFile(String, String)} read file</li>
- * <li>{@link #readFileToList(String, String)} read file to string list</li>
- * <li>{@link #writeFile(String, String, boolean)} write file from String</li>
- * <li>{@link #writeFile(String, String)} write file from String</li>
- * <li>{@link #writeFile(String, List, boolean)} write file from String List</li>
- * <li>{@link #writeFile(String, List)} write file from String List</li>
- * <li>{@link #writeFile(String, InputStream)} write file</li>
- * <li>{@link #writeFile(String, InputStream, boolean)} write file</li>
- * <li>{@link #writeFile(File, InputStream)} write file</li>
- * <li>{@link #writeFile(File, InputStream, boolean)} write file</li>
- * </ul>
- * <ul>
- * Operate file
- * <li>{@link #moveFile(File, File)} or {@link #moveFile(String, String)}</li>
- * <li>{@link #copyFile(String, String)}</li>
- * <li>{@link #getFileExtension(String)}</li>
- * <li>{@link #getFileName(String)}</li>
- * <li>{@link #getFileNameWithoutExtension(String)}</li>
- * <li>{@link #getFileSize(String)}</li>
- * <li>{@link #deleteFile(String)}</li>
- * <li>{@link #isFileExist(String)}</li>
- * <li>{@link #isFolderExist(String)}</li>
- * <li>{@link #makeFolders(String)}</li>
- * <li>{@link #makeDirs(String)}</li>
- * </ul>
- * 
  */
 public class FileUtils {
 
@@ -146,10 +117,9 @@ public class FileUtils {
 	 * @throws RuntimeException if an error occurs while operator FileWriter
 	 */
 	public static boolean writeFile(String filePath, List<String> contentList, boolean append) {
-		if (ListUtils.isEmpty(contentList)) {
+		if (contentList.isEmpty()||contentList==null||contentList.size()==0) {
 			return false;
 		}
-
 		FileWriter fileWriter = null;
 		try {
 			makeDirs(filePath);

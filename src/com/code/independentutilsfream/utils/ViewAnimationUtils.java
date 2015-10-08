@@ -26,7 +26,6 @@ import android.view.animation.TranslateAnimation;
 /**
  * 视图动画工具箱，提供简单的控制视图的动画的工具方法
  *
- * @author zhenguo
  */
 public final class ViewAnimationUtils {
 

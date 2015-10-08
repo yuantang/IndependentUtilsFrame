@@ -1,6 +1,4 @@
-
 package com.code.independentutilsfream.utils;
-
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -11,10 +9,6 @@ import android.view.animation.ScaleAnimation;
  * 动画工具类
  */
 public final class AnimationUtils {
-
-	/**
-	 * Don't let anyone instantiate this class.
-	 */
 	private AnimationUtils() {
 		throw new Error("Do not need instantiate!");
 	}
@@ -286,5 +280,4 @@ public final class AnimationUtils {
 	public static ScaleAnimation getAmplificationAnimation(AnimationListener animationListener) {
 		return getLessenScaleAnimation(DEFAULT_ANIMATION_DURATION, null);
 	}
-
 }

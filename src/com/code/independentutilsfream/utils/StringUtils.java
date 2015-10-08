@@ -9,7 +9,6 @@ import java.util.regex.Pattern;
 /**
  * String Utils
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2011-7-22
  */
 public class StringUtils {
 
@@ -51,18 +50,6 @@ public class StringUtils {
 	 */
 	public static boolean isEmpty(CharSequence str) {
 		return (str == null || str.length() == 0);
-	}
-
-	/**
-	 * compare two string
-	 * 
-	 * @param actual
-	 * @param expected
-	 * @return
-	 * @see ObjectUtils#isEquals(Object, Object)
-	 */
-	public static boolean isEquals(String actual, String expected) {
-		return ObjectUtils.isEquals(actual, expected);
 	}
 
 	/**
@@ -324,4 +311,8 @@ public class StringUtils {
 		}
 		return sb.toString().toUpperCase(Locale.getDefault());
 	}
+	public static boolean isEquals(Object actual, Object expected) { 
+		return actual == expected || (actual == null ? expected == null : actual.equals(expected)); 
+	} 
+
 }

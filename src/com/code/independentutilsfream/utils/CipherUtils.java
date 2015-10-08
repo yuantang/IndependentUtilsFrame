@@ -4,8 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Locale;
-
 import javax.crypto.Cipher;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
@@ -36,7 +34,6 @@ public final class CipherUtils {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
 		StringBuilder hex = new StringBuilder(hash.length * 2);
 		for (byte b : hash) {
 			if ((b & 0xFF) < 0x10)

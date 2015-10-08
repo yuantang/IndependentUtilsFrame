@@ -14,7 +14,6 @@ public class IOUtils {
         throw new AssertionError();
     }
 
-
     /**
      * Close closable object and wrap {@link IOException} with {@link RuntimeException}
      * @param closeable closeable object

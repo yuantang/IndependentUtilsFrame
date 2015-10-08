@@ -5,6 +5,7 @@ package com.code.independentutilsfream.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+
 import org.apache.http.client.CookieStore;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.cookie.BasicClientCookie;
@@ -19,6 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * A CookieStore impl, it's save cookie to SharedPreferences.
  *
  */
+@SuppressWarnings("deprecation")
 public class PreferencesCookieStore implements CookieStore {
 
     private static final String COOKIE_PREFS = "CookiePrefsFile";

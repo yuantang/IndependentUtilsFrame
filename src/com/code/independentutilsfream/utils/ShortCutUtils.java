@@ -30,9 +30,7 @@ import android.net.Uri;
 /**
  * 创建删除快捷图标
  *
- * @author jingle1267@163.com
- *         <p/>
- *         需要权限: com.android.launcher.permission.INSTALL_SHORTCUT com.android.launcher.permission.UNINSTALL_SHORTCUT
+ * 需要权限: com.android.launcher.permission.INSTALL_SHORTCUT com.android.launcher.permission.UNINSTALL_SHORTCUT
  */
 public final class ShortCutUtils {
 

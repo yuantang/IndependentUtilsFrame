@@ -8,7 +8,6 @@ import android.util.Log;
  *
  */
 public final class LogUtils {
-
     /**
      * Don't let anyone instantiate this class.
      */

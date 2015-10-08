@@ -118,7 +118,7 @@ public final class DisplayUtils {
      */
     public static void toggleKeyboard(Context context) {
         InputMethodManager imm = (InputMethodManager) context
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
+               .getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm.isActive()) {
             imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT,
                     InputMethodManager.HIDE_NOT_ALWAYS);
